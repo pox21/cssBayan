@@ -1,0 +1,155 @@
+/* Settings start */
+:root {
+  --color-black: #000;
+  --color-blue: #0000ff;
+
+  --font-size-xl: 42px;
+  --font-size-lg: 32px;
+  --font-size-ml: 22px;
+  --font-size-normal: 20px;
+  --font-size-mobile: 16px;
+  --font-size-small: 14px;
+}
+
+html {
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe\ UI,Roboto,Helvetica\ Neue,Arial,Noto\ Sans,sans-serif;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+  line-height: 1;
+  font-weight: 900;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.title {
+  padding: 10px 0;
+  margin: 0;
+  font-weight: 900;
+  font-size: var(--font-size-xl);
+  color: var(--color-black);
+}
+
+.icon {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon::after, .icon::before {
+  content: "";
+  background-color: var(--color-black);
+  position: absolute;
+  border-radius: 5px;
+}
+
+.icon::before {
+  width: 4px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon::after {
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+/* Settings end */
+
+/* accordion */
+
+.accordion__list {
+  color: var(--color-blue);
+  transition: color 0.2s ease-in-out;
+}
+
+.accordion__list:hover {
+  color: var(--color-black);
+}
+
+.accordion__item:first-child {
+  border-top: 1px solid var(--color-black);
+}
+
+.accordion__item:not(:last-child) {
+  border-bottom: 1px solid var(--color-black);
+}
+
+.accordion__item-header {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  outline: none;
+}
+
+.accordion__item-title {
+  margin: 0;
+  font-size: var(--font-size-ml);
+}
+
+.accordion__item-body {
+  padding: 0;
+  text-align: center;
+  max-height: 0;
+  will-change: max-height;
+  transition: padding 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.accordion__item-body img {
+  width: 375px;
+  height: 262px;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+}
+
+
+.accordion__item-header:hover .icon,
+.accordion__item-header:focus .icon {
+  transform: rotate(45deg);
+}
+.accordion__item-header:hover + .accordion__item-body, 
+.accordion__item-header:focus + .accordion__item-body  {
+  padding: 20px 0;
+  max-height: 1000px;
+  will-change: max-height;
+  transition: padding 0.3s ease-in-out, max-height 0.3s ease-in-out;
+}
+
+.accordion__item-header:hover + .accordion__item-body img,
+.accordion__item-header:focus + .accordion__item-body img {
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.accordion__item-header:focus {
+  color: var(--color-black);
+}
+
+/* accordion */
+
+/* mobile 320x568, tablet 820x1180, desktop 1920×1080 */
